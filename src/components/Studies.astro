@@ -1,0 +1,64 @@
+---
+const studies = [
+    {
+        date: "2024",
+        title: "Programación Web",
+        description: "Curso de programación web con HTML, CSS y JavaScript",
+        institution: "Talentotech - Ministerio de Educación",
+        link:"#",
+        image: "/studies/talentotech.webp"
+    },
+    {
+        date: "2021",
+        title: "Técnico laboral en Inglés B2",
+        description: "Técnico laboral en inglés B2, con una certificación de nivel B2.",
+        institution: "Inglés Para Todos",
+        link:"#",
+        image: "/studies/ingles-para-todos.webp"
+    },
+    {
+        date: "2020",
+        title: "Diseño asistido por computador",
+        description: "Diseño 3D con Tinkercad, circuitos y lenguaje arduino.",
+        institution: "Servicio Nacional de Aprendizaje - SENA",
+        link:"#",
+        image: "/studies/solidworks.webp"
+    },
+    {
+        date: "2020",
+        title: "Especialidad de Desarrollo de Software",
+        description: "Desarrollo de páginas con HTML, CSS Y JavaScript, se desarrollaron programas en Python.",
+        institution: "Institución Educativa San Francisco de Sales",
+        link:"#",
+        image: "/studies/diploma-especialidad.webp"
+    }
+]
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center gap-x-10">
+{
+    studies.map(({date, title, description, link, image, institution}) => (
+    <div class="max-w-sm rounded-lg shadow-sm bg-black/60 border-gray-700">
+
+        <div class="w-full h-56 overflow-hidden">
+            <img class="w-full h-full object-cover object-center rounded-t-lg" src={image} alt="" />
+        </div>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{title}</h5>
+        </a>
+        <p class="mb-3 font-normaltext-gray-400">{description}</p>
+        <h7 class=" text-1xl font-bold text-yellow-200/80 mb-2">{institution}</h7>
+        <div class="mt-4">
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+            Saber más
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+</div>
+
+))
+}
+</div>

@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const experience =[
+    {
+        date: "Actualmente",
+        title: "Tienda web - Next.js y Angular",
+        description: "Es una tienda web para la venta de productos ganadores, con Next.js y Angular, ademas de tener un panel de administrador para la gestion de productos y categorias. Para el frontend se utilizo Angular y para el backend se utilizo Next.js, una base de datos con progreSQL.",
+        
+    },
+    {
+        date: "Actualmente",
+        title: "Creador de contenido - YouTube",
+        description: "Subo cursos de programación en lenguajes como Java, Python, entre otros, también enseño sobre herramientas como Git, office, entre otros.",
+        link:"https://www.youtube.com/@CodeBreaker_Programming"
+    },{
+        date: "Actualmente",
+        title: "Sistemas de información - Salsas de la casa",
+        description: "Actualmente trabajo como Ingeniero de Sistemas manejando los sistemas de información de una empresa de ventas de salsas y otros productos.",
+        
+    },
+    {
+        date: "Agosto 2024",
+        title: "Aplicación web - reflex, python y API",
+        description: "Es una aplicación web cuya función es consumir una api de partidos de tennis, para luego mostrarlos en tiempo real, mostrando estadísticas y resultados.",
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-3">                  
+        {
+            experience.map(experience =>
+                <li class="mb-10 ms-4">
+                    <ExperienceItem {...experience}/>
+                </li>
+            )
+        }
+</ol>
+

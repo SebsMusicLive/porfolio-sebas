@@ -1,0 +1,67 @@
+---
+import PhpIcon from "./icons/Php.astro";
+import HTMLIcon from "./icons/Html.astro";
+import CssIcon from "./icons/Css.astro";
+import MysqlIcon from "./icons/Mysql.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+const tags = {
+    PHP:{
+        name: "PHP",
+        class: "bg-white/10 text-white",
+        icon: PhpIcon
+    },
+    HTML5:{
+        name: "HTML5",
+        class: "bg-[#E34F26]/10 text-[#E34F26]",
+        icon: HTMLIcon
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#264DE4]/10 text-[#264DE4]",
+        icon: CssIcon
+    },
+    MySQL: {
+        name: "MySQL",
+        class: "bg-[#136078]/10 text-[#136078]",
+        icon: MysqlIcon
+    },
+    Bootstrap: {
+        name: "Bootstrap",
+        class: "bg-[#7E13F8]/10 text-[#7E13F8]",
+        icon: BootstrapIcon
+    }
+}
+
+const projects = [
+    {
+        date: "Octubre 2020",
+        title: "Horas de Servicio Social - Institución Educativa",
+        description: "Se realizó una base de datos para la gestion de Horas de Servicio Social de los alumnos de una institución educativa, este fue mi proyecto de grado, utilicé PHP, HTML5, CSS y MySQL.",
+        link:"https://www.youtube.com/watch?v=0Vi7HfpvTVg",
+        github: "#",
+        image: "/projects/project-1.webp",
+        tags: [tags.PHP, tags.HTML5, tags.CSS, tags.MySQL, tags.Bootstrap]
+    }
+]
+---
+
+{
+    projects.map(({title, description, tags, image, link}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {
+                    tags.map(tag => (
+                        <li>
+                            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4" />{tag.name}
+                            </span>
+                        </li>
+                    ))
+                }
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10 " src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+        </article>
+    ))
+}
