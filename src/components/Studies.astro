@@ -1,27 +1,45 @@
 ---
+import Download from "./icons/Download.astro"
+
 const studies = [
     {
         date: "2024",
         title: "Programación Web",
         description: "Curso de programación web con HTML, CSS y JavaScript",
         institution: "Talentotech - Ministerio de Educación",
-        link:"#",
+        link:"https://drive.google.com/uc?export=download&id=1cCYX5no3b7AQokkxwxR_Qb_8WgFmm6iU",
         image: "/studies/talentotech.webp"
     },
     {
+        date: "2024",
+        title: "Programación Python",
+        description: "Curso de Fundamentos de Programación con Python",
+        institution: "Cisco - Networking Academy",
+        link:"https://drive.google.com/uc?export=download&id=1vTTZP2MfuLQ9LKBSfdQODOyYxI5vwy-S",
+        image: "/studies/cisco-python.webp"
+    },
+    {
         date: "2021",
-        title: "Técnico laboral en Inglés B2",
+        title: "Técnico laboral en Inglés B2 - IPT",
         description: "Técnico laboral en inglés B2, con una certificación de nivel B2.",
         institution: "Inglés Para Todos",
-        link:"#",
+        link:"https://drive.google.com/uc?export=download&id=1Gb1n5ZM-6-v4X8RwLTJi4S3FPru5ymPj",
         image: "/studies/ingles-para-todos.webp"
+    },
+    {
+        date: "2021",
+        title: "Arquitectura de Computadores",
+        description: "Curso de Arquitectura de Computadores práctico.",
+        institution: "Servicio Nacional de Aprendizaje - SENA",
+        link:"https://drive.google.com/uc?export=download&id=1_SyLoSxYrVIf5tsZJ4HR0b-ed1UFxXES",
+        image: "/studies/arquitectura-computadores.webp"
     },
     {
         date: "2020",
         title: "Diseño asistido por computador",
         description: "Diseño 3D con Tinkercad, circuitos y lenguaje arduino.",
         institution: "Servicio Nacional de Aprendizaje - SENA",
-        link:"#",
+        link:"https://drive.google.com/uc?export=download&id=1SyEo6argNnbVSxeG5VUSMpd2lcnlp7dv",
         image: "/studies/solidworks.webp"
     },
     {
@@ -29,7 +47,7 @@ const studies = [
         title: "Especialidad de Desarrollo de Software",
         description: "Desarrollo de páginas con HTML, CSS Y JavaScript, se desarrollaron programas en Python.",
         institution: "Institución Educativa San Francisco de Sales",
-        link:"#",
+        link:"https://drive.google.com/uc?export=download&id=1ibSHNCmsIHVnf7rjrO3mtCyE7Hn1OPmZ",
         image: "/studies/diploma-especialidad.webp"
     }
 ]
@@ -44,16 +62,15 @@ const studies = [
         </div>
     <div class="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{title}</h5>
+            <h5 class=" text-2xl font-bold tracking-tight text-white">{title}</h5>
         </a>
-        <p class="mb-3 font-normaltext-gray-400">{description}</p>
+        <span class="text-xs font-medium px-2.5 rounded-sm bg-purple-900 text-purple-300">{date}</span>
+        <p class="mb-3 mt-3 font-normaltext-gray-400">{description}</p>
         <h7 class=" text-1xl font-bold text-yellow-200/80 mb-2">{institution}</h7>
         <div class="mt-4">
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
-            Saber más
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
+        <a href={link} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+            Descargar Certificado
+             <Download class="size-5 ml-2"/>
         </a>
         </div>
     </div>
