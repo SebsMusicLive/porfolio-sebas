@@ -1,0 +1,169 @@
+---
+import PhpIcon from "./icons/Php.astro";
+import HTMLIcon from "./icons/Html.astro";
+import CssIcon from "./icons/Css.astro";
+import MysqlIcon from "./icons/Mysql.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import ReactIcon from "./icons/React.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import PostgreIcon from "./icons/PostgreSQL.astro";
+import JavaIcon from "./icons/Java.astro";
+import ReflexIcon from "./icons/Reflex.astro";
+import PythonIcon from "./icons/Python.astro";
+import SpringIcon from "./icons/Spring.astro";
+
+const technologies = {
+    PHP:{
+        name: "PHP",
+        class: "bg-white/10 text-white",
+        icon: PhpIcon
+    },
+    HTML5:{
+        name: "HTML5",
+        class: "bg-[#E34F26]/10 text-[#E34F26]",
+        icon: HTMLIcon
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#264DE4]/10 text-[#264DE4]",
+        icon: CssIcon
+    },
+    MySQL: {
+        name: "MySQL",
+        class: "bg-[#136078]/10 text-[#136078]",
+        icon: MysqlIcon
+    },
+    Bootstrap: {
+        name: "Bootstrap",
+        class: "bg-[#7E13F8]/10 text-[#7E13F8]",
+        icon: BootstrapIcon
+    },
+    React:{
+        name: "React",
+        class: "bg-[#50ABC5]/10 text-[#50ABC5]",
+        icon: ReactIcon
+    },
+    Astro: {
+        name: "Astro",
+        class: "bg-[#FF5D01]/10 text-[#FF5D01]",
+        icon: AstroIcon
+    },
+    Postgre:{
+        name: "Postgre",
+        class: "bg-[#336791]/10 text-[#336791]",
+        icon: PostgreIcon
+    },
+    Java: {
+        name: "Java",
+        class: "bg-[#5382A1]/10 text-[#5382A1]",
+        icon: JavaIcon
+    },
+    Reflex: {
+        name: "Reflex",
+        class: "bg-[#CBC7DA]/10 text-[#CBC7DA]",
+        icon: ReflexIcon
+    },
+    Python: {
+        name: "Python",
+        class: "bg-[#FFDC52]/10 text-[#FFDC52]",
+        icon: PythonIcon
+    },
+    Spring:{
+        name: "Spring",
+        class: "bg-[#6DB33F]/10 text-[#6DB33F]",
+        icon: SpringIcon
+    }
+
+}
+
+const services = {
+    porfolios: {
+        description: "Sitios informativos y portafolios personales",
+    },
+    tiendas: {
+        description: "Tiendas online (E-commerce)",
+    },
+    landingPages: {
+        description: "Landing pages y blogs personalizados",
+    },
+    bases:{
+        description: "Bases de datos",
+    },
+    gestion:{
+        description: "Sistemas de gestión (usuarios, ventas, inventario, etc.)",
+    },
+    multi:{
+        description: "Aplicaciones multiplataforma",
+    },
+    api:{
+        description:"Integración con servicios externos (API REST)",
+    }
+}
+
+const data = [
+    {
+        name: "Desarrollo Web",
+        servicesIn: [services.porfolios, services.tiendas, services.landingPages, services.bases ],
+        tech: [technologies.HTML5, technologies.CSS, technologies.React, technologies.Astro, technologies.Reflex, technologies.MySQL, technologies.Postgre , technologies.PHP, technologies.Bootstrap],
+    },
+    {
+        name: "Desarrollo de Software",
+        servicesIn: [services.gestion, services.multi, services.api],
+        tech: [technologies.Java, technologies.Spring, technologies.Python],
+    }
+    
+]
+---
+
+<div class="relative overflow-x-auto h-full">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-400 border border-gray-600">
+        <thead class="text-xs  uppercase text-gray-400 border-b border-gray-600">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Nombre de Servicio
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Servicios
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Tecnologías manejadas
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {data.map(({name, tech,servicesIn}) => (
+                 <tr class="">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {name}
+                </th>
+                <td class="px-6 py-4">
+                    <ul class="list-disc">
+                {
+                    servicesIn.map(service=>(   
+                        <li class="mb-2 font-bold">
+                            {service.description}
+                        </li>
+                    ))
+                }
+                </ul>
+                </td>
+                <td class="px-6 py-4">
+                    <ul class="flex gap-x-2 flex-wrap mb-2">
+                        {
+                            tech.map(tech=>(
+                                <li class="mb-2">
+                                    <span class={`flex gap-x-2 rounded-full text-xs ${tech.class} py-1 px-2`}>
+                                    <tech.icon class="size-4" />{tech.name}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </td>
+            </tr>
+            ))}
+           
+        </tbody>
+    </table>
+</div>
