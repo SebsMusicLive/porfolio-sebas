@@ -7,8 +7,9 @@ import BootstrapIcon from "./icons/Bootstrap.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 import YoutubeIcon from "./icons/Youtube.astro";
 import AngularIcon from "./icons/Angular.astro";
-import TailwindIcon from "./icons/Tailwind.astro";
+import TailwindIcon from "./icons/TailwindCSS.astro";
 import TypescriptIcon from "./icons/Typescript.astro";
+import PythonIcon from "./icons/Python.astro";
 
 const tags = {
     PHP:{
@@ -50,10 +51,31 @@ const tags = {
         name: "Typescript",
         class: "bg-[#3178C6]/10 text-[#3178C6]",
         icon: TypescriptIcon
+    },
+    Python:{
+        name: "Python",
+        class: "bg-[#FFDC52]/10 text-[#FFDC52]",
+        icon: PythonIcon
     }
 }
 
 const projects = [
+    {
+        date: "Junio 2025",
+        title: "Gestión de Notas",
+        description: "Desarrollé un sistema de gestión académica que permite registrar, consultar y administrar las calificaciones de los estudiantes.\n\n El proyecto incluye módulos para docentes, estudiantes y administradores, facilitando el control del rendimiento académico. \n\n Utilicé tecnologías como Spring Boot, MySQL y TailwindCSS, fortaleciendo mis conocimientos en arquitectura de software, diseño relacional y desarrollo full stack.",
+        github:"https://github.com/SebsMusicLive/sistema.gestion.notas.git",
+        image: "/projects/gestion-escolar.webp",
+        tags: [tags.PHP, tags.MySQL, tags.Bootstrap]
+    },
+    {
+        date: "Mayo 2024",
+        title: "Creador de contenido - YouTube",
+        description: "Este proyecto consiste en una aplicación de escritorio desarrollada en Python que permite enviar mensajes personalizados de WhatsApp de forma automatizada a una lista de contactos almacenada en un archivo de Excel. \n\n La herramienta fue creada con el objetivo de facilitar campañas de comunicación masiva —por ejemplo, convocatorias, notificaciones o mensajes informativos— sin necesidad de usar plataformas de pago ni servicios externos.",
+        github:"https://github.com/SebsMusicLive/Automatizacion-de-mensajes-GUI",
+        image: "/projects/automatic-message.webp",
+        tags: [tags.Python]
+    },
     {
         date: "Octubre 2024",
         title: "Bussi App",
