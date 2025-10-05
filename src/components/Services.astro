@@ -127,55 +127,41 @@ const data = [
 ]
 ---
 
-<div class="relative overflow-x-auto h-full">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-400 border border-gray-600 bg-purple-900/15 backdrop-blur-md">
-        <thead class="text-xs  uppercase text-gray-400 border-b border-gray-600">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Nombre de Servicio
-                </th>
-                
-                <th scope="col" class="px-6 py-3">
-                    Servicios
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Tecnologías manejadas
-                </th>
-            </tr>
-        </thead>
-        <tbody >
-            {data.map(({name, tech,servicesIn}) => (
-                 <tr class="">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-white">
-                    {name}
-                </th>
-                <td class="px-6 py-4">
-                    <ul class="list-disc">
-                {
-                    servicesIn.map(service=>(   
-                        <li class="mb-2 font-bold">
-                            {service.description}
-                        </li>
-                    ))
-                }
-                </ul>
-                </td>
-                <td class="px-6 py-4">
-                    <ul class="flex gap-x-2 flex-wrap mb-2">
-                        {
-                            tech.map(tech=>(
-                                <li class="mb-2">
-                                    <span class={`flex gap-x-2 rounded-full text-xs ${tech.class} py-1 px-2`}>
-                                    <tech.icon class="size-4" />{tech.name}
-                                    </span>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </td>
-            </tr>
-            ))}
-           
-        </tbody>
-    </table>
+<div class="w-full overflow-x-auto sm:rounded-lg">
+  <table class="min-w-[600px] sm:min-w-full text-sm text-left text-gray-400 border border-gray-600 bg-purple-900/15 backdrop-blur-md">
+    <thead class="text-xs uppercase text-gray-400 border-b border-gray-600">
+      <tr>
+        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3">Nombre de Servicio</th>
+        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3">Servicios</th>
+        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3">Tecnologías manejadas</th>
+      </tr>
+    </thead>
+    <tbody>
+      {data.map(({ name, tech, servicesIn }) => (
+        <tr>
+          <th scope="row" class="px-3 py-2 sm:px-6 sm:py-4 font-medium text-white whitespace-nowrap">
+            {name}
+          </th>
+          <td class="px-3 py-2 sm:px-6 sm:py-4">
+            <ul class="list-disc ms-4">
+              {servicesIn.map(service => (
+                <li class="mb-1 sm:mb-2 font-bold">{service.description}</li>
+              ))}
+            </ul>
+          </td>
+          <td class="px-3 py-2 sm:px-6 sm:py-4">
+            <ul class="flex flex-wrap gap-1 sm:gap-2">
+              {tech.map(tech => (
+                <li>
+                  <span class={`flex items-center gap-1 sm:gap-2 rounded-full text-[10px] sm:text-xs ${tech.class} py-1 px-2`}>
+                    <tech.icon class="size-3 sm:size-4" />{tech.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
 </div>
