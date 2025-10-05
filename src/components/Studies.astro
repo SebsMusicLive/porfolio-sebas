@@ -55,7 +55,7 @@ const studies = [
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center gap-x-10">
 {
     studies.map(({date, title, description, link, image, institution}) => (
-    <div class="max-w-sm rounded-lg shadow-sm bg-black/60 border-gray-700">
+    <div class="max-w-sm rounded-lg shadow-sm bg-purple-900/15 backdrop-blur-sm border-gray-700">
 
         <div class="w-full h-56 overflow-hidden">
             <img class="w-full h-full object-cover object-center rounded-t-lg" src={image} alt="" />
@@ -68,10 +68,10 @@ const studies = [
         <p class="mb-3 mt-3 font-normaltext-gray-400">{description}</p>
         <h7 class=" text-1xl font-bold text-yellow-200/80 mb-2">{institution}</h7>
         <div class="mt-4">
-        <a href={link} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
-            Descargar Certificado
-             <Download class="size-5 ml-2"/>
-        </a>
+            <a href={link} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+                Descargar Certificado
+                <Download class="size-5 ml-2"/>
+            </a>
         </div>
     </div>
 </div>

@@ -11,6 +11,8 @@ import JavaIcon from "./icons/Java.astro";
 import ReflexIcon from "./icons/Reflex.astro";
 import PythonIcon from "./icons/Python.astro";
 import SpringIcon from "./icons/Spring.astro";
+import NextIcon from "./icons/Next.astro";
+import NodeIcon from "./icons/Node.astro";
 
 const technologies = {
     PHP:{
@@ -49,7 +51,7 @@ const technologies = {
         icon: AstroIcon
     },
     Postgre:{
-        name: "Postgre",
+        name: "PostgreSQL",
         class: "bg-[#336791]/10 text-[#336791]",
         icon: PostgreIcon
     },
@@ -72,6 +74,16 @@ const technologies = {
         name: "Spring",
         class: "bg-[#6DB33F]/10 text-[#6DB33F]",
         icon: SpringIcon
+    },
+    Next:{
+        name: "NextJS",
+        class: "bg-[#ffffff]/10 text-[#ffffff]",
+        icon: NextIcon
+    },
+    Node:{
+        name: "NodeJS",
+        class: "bg-[#8CC84B]/10 text-[#8CC84B]",
+        icon: NodeIcon
     }
 
 }
@@ -104,19 +116,19 @@ const data = [
     {
         name: "Desarrollo Web",
         servicesIn: [services.porfolios, services.tiendas, services.landingPages, services.bases ],
-        tech: [technologies.HTML5, technologies.CSS, technologies.React, technologies.Astro, technologies.Reflex, technologies.MySQL, technologies.Postgre , technologies.PHP, technologies.Bootstrap],
+        tech: [ technologies.Next, technologies.React, technologies.Astro, technologies.Reflex, technologies.MySQL, technologies.Postgre , technologies.PHP, technologies.Bootstrap],
     },
     {
         name: "Desarrollo de Software",
         servicesIn: [services.gestion, services.multi, services.api],
-        tech: [technologies.Java, technologies.Spring, technologies.Python],
+        tech: [technologies.Java, technologies.Spring, technologies.Python, technologies.Node],
     }
     
 ]
 ---
 
 <div class="relative overflow-x-auto h-full">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-400 border border-gray-600">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-400 border border-gray-600 bg-purple-900/15 backdrop-blur-md">
         <thead class="text-xs  uppercase text-gray-400 border-b border-gray-600">
             <tr>
                 <th scope="col" class="px-6 py-3">

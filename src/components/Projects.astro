@@ -4,6 +4,12 @@ import HTMLIcon from "./icons/Html.astro";
 import CssIcon from "./icons/Css.astro";
 import MysqlIcon from "./icons/Mysql.astro";
 import BootstrapIcon from "./icons/Bootstrap.astro";
+import GitHubIcon from "./icons/GitHub.astro";
+import YoutubeIcon from "./icons/Youtube.astro";
+import AngularIcon from "./icons/Angular.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+import TypescriptIcon from "./icons/Typescript.astro";
+
 const tags = {
     PHP:{
         name: "PHP",
@@ -29,27 +35,53 @@ const tags = {
         name: "Bootstrap",
         class: "bg-[#7E13F8]/10 text-[#7E13F8]",
         icon: BootstrapIcon
+    },
+    Angular: {
+        name: "Angular",
+        class: "bg-[#CF0030]/10 text-[#CF0030]",
+        icon: AngularIcon
+    },
+    Tailwind:{
+        name: "Tailwind",
+        class: "bg-[#38BDF8]/10 text-[#38BDF8]",
+        icon: TailwindIcon
+    },
+    Typescript: {
+        name: "Typescript",
+        class: "bg-[#3178C6]/10 text-[#3178C6]",
+        icon: TypescriptIcon
     }
 }
 
 const projects = [
     {
+        date: "Octubre 2024",
+        title: "Bussi App",
+        description: "Desarrollé un sitio web promocional para Busi App, una aplicación orientada al servicio público de transporte urbano. \n\n El proyecto permitió mostrar las funcionalidades y beneficios de la app, fortaleciendo mis habilidades en Angular, TailwindCSS y TypeScript, con un enfoque en diseño responsivo y optimización del rendimiento.",
+        github: "https://github.com/SebsMusicLive/busi.app",
+        image: "/projects/busi-app.webp",
+        tags: [tags.Angular, tags.Tailwind, tags.Typescript]
+    },
+    {
         date: "Octubre 2020",
         title: "Horas de Servicio Social - Institución Educativa",
-        description: "Se realizó una base de datos para la gestion de Horas de Servicio Social de los alumnos de una institución educativa, este fue mi proyecto de grado, utilicé PHP, HTML5, CSS y MySQL.",
+        description: "Realicé una base de datos para la gestión de Horas de Servicio Social de los alumnos de una institución educativa. \n\n El sistema permitía registrar, consultar y generar reportes de las horas completadas por cada estudiante, facilitando el seguimiento para docentes y coordinadores. \n\n Fue desarrollado con PHP, HTML5, CSS y MySQL, fortaleciendo mis conocimientos en diseño de bases de datos relacionales, desarrollo backend y conexión entre frontend y servidor.",
         link:"https://www.youtube.com/watch?v=0Vi7HfpvTVg",
-        github: "#",
         image: "/projects/project-1.webp",
-        tags: [tags.PHP, tags.HTML5, tags.CSS, tags.MySQL, tags.Bootstrap]
+        tags: [tags.PHP, tags.MySQL, tags.Bootstrap]
     }
 ]
 ---
 
 {
-    projects.map(({title, description, tags, image, link}) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
+    projects.map(({title, date, description, tags, image, link, github}) => (
+        <article class="mb-10">
+            <div class="flex flex-row gap-x-2 items-center">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+                <span class="text-xs font-medium px-2.5 rounded-sm bg-yellow-900 text-yellow-200 h-1/2">{date}</span>
+            </div>
+            
+            <p class="text-lg mb-4 text-pretty whitespace-pre-line">{description}</p>
             <ul class="flex gap-x-2 flex-row mb-2">
                 {
                     tags.map(tag => (
@@ -61,7 +93,27 @@ const projects = [
                     ))
                 }
             </ul>
-            <img class="rounded shadow-2xl shadow-white/10 " src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+            <img class="rounded-lg shadow-2xl shadow-white/10 " src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+            <div class=" mt-4 flex flex-row gap-x-2">
+            {
+                link && (
+                    <a href={link} class={`rounded-full border border-white/10  flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 bg-white/5
+                        hover:scale-110 hover:bg-white/10 transition text-xs md:text-base`}>
+                        Ver Vídeo
+                        <YoutubeIcon class="size-4"/>
+                    </a>
+                )
+            }
+            {
+                github && (
+                    <a href={github} class={`rounded-full border border-white/10  flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 bg-white/5
+                        hover:scale-110 hover:bg-white/10 transition text-xs md:text-base`}>
+                        Ver GitHub
+                        <GitHubIcon class="size-4"/>
+                    </a>
+                )
+            }
+            </div>
         </article>
     ))
 }
