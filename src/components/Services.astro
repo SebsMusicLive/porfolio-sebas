@@ -127,41 +127,44 @@ const data = [
 ]
 ---
 
-<div class="w-full overflow-x-auto sm:rounded-lg">
-  <table class="min-w-[600px] sm:min-w-full text-sm text-left text-gray-400 border border-gray-600 bg-purple-900/15 backdrop-blur-md">
-    <thead class="text-xs uppercase text-gray-400 border-b border-gray-600">
-      <tr>
-        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3">Nombre de Servicio</th>
-        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3">Servicios</th>
-        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3">Tecnologías manejadas</th>
-      </tr>
-    </thead>
-    <tbody>
-      {data.map(({ name, tech, servicesIn }) => (
+<div class="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-transparent">
+  <div class="min-w-[650px] sm:min-w-full">
+    <table class="w-full text-sm text-left text-gray-400 border border-gray-600 bg-purple-900/15 backdrop-blur-md">
+      <thead class="text-xs uppercase text-gray-400 border-b border-gray-600">
         <tr>
-          <th scope="row" class="px-3 py-2 sm:px-6 sm:py-4 font-medium text-white whitespace-nowrap">
-            {name}
-          </th>
-          <td class="px-3 py-2 sm:px-6 sm:py-4">
-            <ul class="list-disc ms-4">
-              {servicesIn.map(service => (
-                <li class="mb-1 sm:mb-2 font-bold">{service.description}</li>
-              ))}
-            </ul>
-          </td>
-          <td class="px-3 py-2 sm:px-6 sm:py-4">
-            <ul class="flex flex-wrap gap-1 sm:gap-2">
-              {tech.map(tech => (
-                <li>
-                  <span class={`flex items-center gap-1 sm:gap-2 rounded-full text-[10px] sm:text-xs ${tech.class} py-1 px-2`}>
-                    <tech.icon class="size-3 sm:size-4" />{tech.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </td>
+          <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3">Nombre de Servicio</th>
+          <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3">Servicios</th>
+          <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3">Tecnologías</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {data.map(({ name, tech, servicesIn }) => (
+          <tr class="border-b border-gray-700">
+            <th scope="row" class="px-4 py-3 font-medium text-white whitespace-nowrap">
+              {name}
+            </th>
+            <td class="px-4 py-3">
+              <ul class="list-disc ms-4">
+                {servicesIn.map(service => (
+                  <li class="mb-1 font-semibold text-gray-300">{service.description}</li>
+                ))}
+              </ul>
+            </td>
+            <td class="px-4 py-3">
+              <ul class="flex flex-wrap gap-1 sm:gap-2">
+                {tech.map(tech => (
+                  <li>
+                    <span class={`flex items-center gap-1 rounded-full text-[10px] sm:text-xs ${tech.class} py-1 px-2`}>
+                      <tech.icon class="size-3 sm:size-4" />{tech.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 </div>
+
