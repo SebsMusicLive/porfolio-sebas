@@ -2,19 +2,16 @@
   <div class="max-w-[1120px] mx-auto px-4">
     <nav class="flex justify-between items-center py-4">
 
-      <!-- LOGO o Nombre -->
       <a href="#top" class="text-lg font-semibold hover:text-purple-400 transition">
         Sebastián
       </a>
 
-      <!-- Botón hamburguesa (solo móvil) -->
       <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
         <span class="w-6 h-0.5 bg-white"></span>
         <span class="w-6 h-0.5 bg-white"></span>
         <span class="w-6 h-0.5 bg-white"></span>
       </button>
 
-      <!-- Menú en desktop -->
       <ul class="hidden md:flex gap-x-8 text-sm opacity-90">
         <li><a href="#top" class="hover:text-purple-400 transition">Inicio</a></li>
         <li><a href="#sobre-mi" class="hover:text-purple-400 transition">Sobre mí</a></li>
@@ -25,8 +22,7 @@
       </ul>
     </nav>
 
-    <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-3 py-4 bg-black/70 rounded-lg mt-2 backdrop-blur-md text-center">
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 py-4 bg-black/70 rounded-lg mt-2 backdrop-blur-md text-center">
       <a href="#top" class="hover:text-purple-400 transition">Inicio</a>
       <a href="#sobre-mi" class="hover:text-purple-400 transition">Sobre mí</a>
       <a href="#experiencia" class="hover:text-purple-400 transition">Experiencia</a>
@@ -43,7 +39,9 @@
 
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener("click", () => {
+      // FIX: Toggle both classes so they swap states perfectly
       mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
     });
   }
 </script>
